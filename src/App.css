@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MainContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Header{
+  display: flex;
+}
+
+.TopLeftContainer {
+  width: 272px;
+  background-color: #734a8b21;
+  height: 80px;
+  margin-left: 40px;
+}
+
+.LeftNav {
+  width: 272px;
+  background-color: #33074F; 
   color: white;
+  padding: 20px;
+  height: 900px; 
 }
 
-.App-link {
-  color: #61dafb;
+.LeftNav ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.LeftNav li {
+  margin: 10px 0;
 }
+
+.LeftNav li:hover {
+  background-color: #495057; 
+  cursor: pointer;
+}
+
+
+.TopDashboard {
+  background-color: white;
+  width: 1168px; 
+  height: 80px;
+  left: 272px;
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.Content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.Tasks {
+  border: 1px solid #dee2e6;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.Feed {
+  border: 1px solid #dee2e6;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+
