@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import "./App.css";
 import Profile from "./Assets/Profile.svg";
 import Vector from "./Assets/Vector.svg";
@@ -12,6 +12,9 @@ import Feed from "./Feed";
 import Avatar1 from "./Assets/Avatar-1.svg";
 import Avatar2 from "./Assets/Avatar-2.svg";
 import Close from "./Assets/Close.svg";
+
+// Create a context
+export const AppContext = createContext();
 
 // Feed Dummy Data
 const feedData = [
@@ -152,38 +155,40 @@ const App = () => {
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
   return (
-    <div className="App">
-      <div className="SidebarSection">
-        <Sidebar />
-        <SidebarNav />
-      </div>
-      <Header />
-      <div className="WelcomeSection">
-        <Welcome />
-        <WelcomeVector />
-      </div>
-      <main className="MainContent">
-        <div className="TasksSection">
-          <h2>Tasks</h2>
-          {currentTasks.map((task) => (
-            <Task key={task.id} task={task} />
-          ))}
-          <Pagination
-            tasksPerPage={tasksPerPage}
-            totalTasks={data.length}
-            paginate={paginate}
-            currentPage={currentPage}
-          />
+    <AppContext.Provider value={{ currentTasks, paginate }}>
+      <div className="App">
+        <div className="SidebarSection">
+          <Sidebar />
+          <SidebarNav />
         </div>
-        <div className="FeedSection">
-          <h2>Activity Feed</h2>
-          {feedData.map((item) => (
-            <Feed key={item.id} item={item} />
-          ))}
+        <Header />
+        <div className="WelcomeSection">
+          <Welcome />
+          <WelcomeVector />
         </div>
-        <TaskPriorities data={data} />
-      </main>
-    </div>
+        <main className="MainContent">
+          <div className="TasksSection">
+            <h2>Tasks</h2>
+            {currentTasks.map((task) => (
+              <Task key={task.id} task={task} />
+            ))}
+            <Pagination
+              tasksPerPage={tasksPerPage}
+              totalTasks={data.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
+          </div>
+          <div className="FeedSection">
+            <h2>Activity Feed</h2>
+            {feedData.map((item) => (
+              <Feed key={item.id} item={item} />
+            ))}
+          </div>
+          <TaskPriorities data={data} />
+        </main>
+      </div>
+    </AppContext.Provider>
   );
 };
 

@@ -21,7 +21,6 @@ function Pagination({ totalTasks, tasksPerPage, paginate, currentPage }) {
           >
             &lt;
           </a>
-          {console.log(currentPage)}
         </li>
         {pageNumbers.map((number) => (
           <li
@@ -45,7 +44,6 @@ function Pagination({ totalTasks, tasksPerPage, paginate, currentPage }) {
           >
             &gt;
           </a>
-          {console.log(currentPage)}
         </li>
       </ul>
     </nav>
