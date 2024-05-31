@@ -1,66 +1,196 @@
-.MainContainer {
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar welcome"
+    "sidebar main";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto auto 1fr;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: whitesmoke;
+}
+
+.SidebarSection {
+  grid-area: sidebar;
   display: flex;
-}
-
-.Header{
-  display: flex;
-}
-
-.TopLeftContainer {
-  width: 272px;
-  background-color: #734a8b21;
-  height: 80px;
-  margin-left: 40px;
-}
-
-.LeftNav {
-  width: 272px;
-  background-color: #33074F; 
+  flex-direction: column;
+  background-color: #f4f4f4;
   color: white;
-  padding: 20px;
-  height: 900px; 
+  border-right: 1px solid #D0D5DD;
+  max-height: 100vh;
 }
 
-.LeftNav ul {
+.SidebarTitle {
+  height: 80px;
+  background-color: #33074fee;
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SidebarNav {
+  flex-grow: 1;
+  background-color: #33074F;
+  padding: 20px;
+}
+
+.SidebarNav ul {
   list-style-type: none;
   padding: 0;
 }
 
-.LeftNav li {
-  margin: 10px 0;
+.SidebarNav li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #EBE6ED1A;       
+  border-radius: 30px;      
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.LeftNav li:hover {
-  background-color: #495057; 
+.SidebarNav p{
+  color: white;
+}
+
+.SidebarNav li:hover {
+  background-color: #7d2eb1ad; 
+  border-color: #7d2eb1;       
+}
+
+.SidebarNav img {
+  margin-right: 10px;
+}
+
+.Header {
+  grid-area: header;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+.Profile {
+  display: flex;
+  align-items: center;
+}
+
+.Profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.WelcomeSection {
+  margin: 20px;
+  grid-area: welcome;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  position: relative; 
+}
+
+.Welcome h1, p{
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.Welcome a{
+  color:#BC006D;
+}
+
+.Welcome {
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.Vector {
+  display: flex;
+  align-items: center;
+}
+
+.Vector img {
+  width: 90%;
+  height: 124%;
+}
+
+.CancelButton {
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
   cursor: pointer;
 }
 
-
-.TopDashboard {
-  background-color: white;
-  width: 1168px; 
-  height: 80px;
-  left: 272px;
-  padding: 20px;
-  text-align: left;
-  border-bottom: 1px solid #dee2e6;
+.CancelButton img {
+  width: 24px;
+  height: 24px;
 }
 
-.Content {
-  flex-grow: 1;
+.MainContent {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "tasks feed"
+    "tasks priorities";
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
   padding: 20px;
 }
 
-.Tasks {
-  border: 1px solid #dee2e6;
+.TasksSection,
+.FeedSection,
+.TaskPriorities {
+  background-color: #fff;
   padding: 20px;
-  margin: 10px 0;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
 }
 
-.Feed {
-  border: 1px solid #dee2e6;
-  padding: 20px;
-  margin: 10px 0;
+.TasksSection {
+  grid-area: tasks;
+  padding: 0;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  max-height: 72vh;
 }
 
+.TasksSection h2{
+  margin-left: 20px;
+}
+.FeedSection {
+  grid-area: feed;
+  padding: 0; 
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  background-color: #fff;
+  max-height: 37vh; 
+  overflow-y: auto; 
+}
 
+.FeedSection h2{
+  margin-left: 20px;
+}
+
+.TaskPriorities {
+  grid-area: priorities;
+  max-height: 29vh;
+}

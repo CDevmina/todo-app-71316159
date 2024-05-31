@@ -1,0 +1,49 @@
+.Feed {
+    margin-bottom: 0px;
+    padding: 10px;
+    border-top: 1px solid #D0D5DD;
+    border-left: 1px solid #D0D5DD;
+    border-right: 1px solid #D0D5DD;
+    background-color: #fff;
+}
+
+.Feed:last-child {
+    border-bottom: 1px solid #D0D5DD;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.Feed ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Feed p {
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.Feed li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.Feed img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.FeedContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.FeedDatetime {
+    color: grey;
+    font-size: 0.85em;
+    margin-top: 5px;
+}

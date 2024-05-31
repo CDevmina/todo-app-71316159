@@ -1,21 +1,28 @@
-.pagination {
+.Pagination {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 40px 0;
+    list-style-type: none;
+
   }
   
-  .page-item {
+  .Page-number {
     margin: 0 5px;
   }
   
-  .page-link {
+  .Page-link {
     padding: 10px 15px;
     border: 1px solid #dee2e6;
-    color: #343a40;
+    text-decoration: none;
     cursor: pointer;
   }
+
+  .Selected a{
+   color: #BC006D;
+    border-color: #BC006D;
+  }
   
-  .page-link:hover {
-    background-color: #e9ecef;
+  .Page-link:hover {
+    background-color: #BC006D;
   }
   

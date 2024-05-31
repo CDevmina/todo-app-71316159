@@ -1,0 +1,76 @@
+.Task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #d0d5dd;
+  }
+  
+  .Task-bell {
+    flex-shrink: 0;
+  }
+  
+  .Task-bell img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .Task-details {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  
+  .Task-details h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .Task-status p{
+    margin: 0;
+    margin-top: 3px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .Task-status {
+    text-align: center;
+    display:flex;
+  }
+  
+  .Task-status label {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+
+  .Complete{
+    color: #219653;
+    background-color: #E8F5E9;
+  }
+
+    .Incomplete{
+        color: #F2C94C;
+        background-color: #F2C94C1A;
+    }
+  
+  .MarkAsDone {
+    display: inline-block;
+    margin:0;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #BC006D;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .MarkAsDone:hover {
+    text-decoration: underline;
+  }
+  

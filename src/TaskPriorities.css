@@ -1,0 +1,16 @@
+.TaskPriorities {
+    text-align: center;
+  }
+  
+  .TaskPriorities h2 {
+    margin-bottom: 20px;
+  }
+  
+  .DoughnutContainer {
+    position: relative;
+    width: 330px; 
+    height: 330px; 
+    margin-left: auto;
+    margin-right:   auto;
+  }
+  
